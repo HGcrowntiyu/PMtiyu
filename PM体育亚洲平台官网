@@ -1,0 +1,30 @@
+Đoạn code sau đây sử dụng hàm WP_Query để truy vấn bài viết trong WordPress theo giá trị của trường tùy chỉnh (custom field):
+  $args = array(
+    'post_type' => 'post', // loại bài viết muốn truy vấn
+    'meta_key' => 'tên_trường_tùy_chỉnh', // tên trường tùy chỉnh cần truy vấn
+    'meta_value' => 'giá_trị_trường_tùy_chỉnh', // giá trị của trường tùy chỉnh cần truy vấn
+    'posts_per_page' => 10 // số lượng bài viết muốn lấy ra
+);
+
+$custom_query = new WP_Query( $args );
+
+if ( $custom_query->have_posts() ) :
+    while ( $custom_query->have_posts() ) : $custom_query->the_post();
+
+        // Xử lý và hiển thị nội dung bài viết
+        the_title();
+        the_content();
+
+    endwhile;
+endif;
+
+wp_reset_postdata();
+Trong đó:
+
+post_type: Loại bài viết muốn truy vấn (ví dụ: post, page, custom post type...)
+meta_key: Tên của trường tùy chỉnh cần truy vấn.
+meta_value: Giá trị của trường tùy chỉnh cần truy vấn.
+posts_per_page: Số lượng bài viết muốn lấy ra.
+the_title(): Hiển thị tiêu đề bài viết.
+the_content(): Hiển thị nội dung bài viết.
+wp_reset_postdata(): Đặt lại biến $post của WordPress sau khi kết thúc truy vấn.
