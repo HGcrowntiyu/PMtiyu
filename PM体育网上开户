@@ -1,0 +1,15 @@
+Đây là đoạn mã HTML để hiển thị Facebook Like Box trên trang web của bạn:
+<div class="fb-like-box" data-href="https://www.facebook.com/facebook" data-width="300" data-height="300" data-show-faces="true" data-stream="false" data-header="true"></div>
+
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+Bạn cần thay đổi giá trị của các thuộc tính data-href để chỉ định đường dẫn đến trang Facebook của bạn, data-width và data-height để chỉ định kích thước của hộp Like Box, và data-show-faces để hiển thị các mặt của người dùng đã thích trang. Bạn cũng có thể thay đổi giá trị của data-stream để hiển thị hoặc ẩn bản tin và data-header để hiển thị hoặc ẩn tiêu đề Like Box.
+
+Đoạn mã JavaScript phía trên được sử dụng để tải Facebook SDK và kích hoạt plugin Like Box trên trang web của bạn. Vui lòng đảm bảo rằng bạn đã thêm đoạn mã JavaScript này vào trang web của mình trước khi sử dụng mã HTML để hiển thị Like Box.
