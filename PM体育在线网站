@@ -1,0 +1,5 @@
+Để lấy giá trị của một custom field trong WordPress, bạn có thể sử dụng hàm get_post_meta(). Ví dụ, nếu bạn muốn lấy giá trị của trường tùy chỉnh có tên là "price" cho một bài viết cụ thể, bạn có thể sử dụng đoạn mã sau:
+$price = get_post_meta( get_the_ID(), 'price', true );
+Ở đây, get_the_ID() sẽ trả về ID của bài viết hiện tại, "price" là tên của trường tùy chỉnh cần lấy, và true sẽ đảm bảo rằng giá trị của trường sẽ được trả về dưới dạng một chuỗi (thay vì một mảng).
+
+Bạn có thể sử dụng biến $price để hiển thị giá trị của trường tùy chỉnh này ở bất kỳ đâu trong mã của mình.
